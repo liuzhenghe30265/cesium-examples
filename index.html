@@ -13,6 +13,9 @@
         #cesiumContainer {
             width: 100%;
             height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         #slider {
@@ -70,8 +73,7 @@
         setTimeout(async () => {
             try {
                 const left = await new Cesium.Cesium3DTileset({
-                    url: './model/truck/a/terra_b3dms/tileset.json',
-                    // url: 'https://lab.earthsdk.com/model/3610c2b0d08411eab7a4adf1d6568ff7/tileset.json',
+                    url: './model/terra_b3dms/tileset.json',
                     debugShowMemoryUsage: false
                 })
                 viewer.scene.primitives.add(left)
@@ -79,13 +81,23 @@
 
                 viewer.zoomTo(left)
 
-                const right = await new Cesium.Cesium3DTileset({
-                    url: './model/truck/b/terra_b3dms/tileset.json',
-                    // url: 'https://lab.earthsdk.com/model/908311a0ac2f11e99dbd8fd044883638/tileset.json',
-                    debugShowMemoryUsage: false
-                })
-                viewer.scene.primitives.add(right)
-                right.splitDirection = Cesium.SplitDirection.RIGHT
+                // const left = await new Cesium.Cesium3DTileset({
+                //     url: './model/truck/a/terra_b3dms/tileset.json',
+                //     // url: 'https://lab.earthsdk.com/model/3610c2b0d08411eab7a4adf1d6568ff7/tileset.json',
+                //     debugShowMemoryUsage: false
+                // })
+                // viewer.scene.primitives.add(left)
+                // left.splitDirection = Cesium.SplitDirection.LEFT
+
+                // viewer.zoomTo(left)
+
+                // const right = await new Cesium.Cesium3DTileset({
+                //     url: './model/truck/b/terra_b3dms/tileset.json',
+                //     // url: 'https://lab.earthsdk.com/model/908311a0ac2f11e99dbd8fd044883638/tileset.json',
+                //     debugShowMemoryUsage: false
+                // })
+                // viewer.scene.primitives.add(right)
+                // right.splitDirection = Cesium.SplitDirection.RIGHT
             } catch (error) {
                 console.log(`Error loading tileset: ${error}`)
             }
