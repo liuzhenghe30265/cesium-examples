@@ -98,6 +98,11 @@
                 // })
                 // viewer.scene.primitives.add(right)
                 // right.splitDirection = Cesium.SplitDirection.RIGHT
+
+                var model = viewer.scene.primitives.add(Cesium.Model.fromGltf({
+                    url: './model/qxxz.glb',
+                    modelMatrix: Cesium.Transforms.eastNorthUpToFixedFrame(Cesium.Cartesian3.fromDegrees(102.73, 25.04, 0))
+                }))
             } catch (error) {
                 console.log(`Error loading tileset: ${error}`)
             }
